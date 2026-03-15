@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>HealthSense Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<h1>HealthSense AI Dashboard</h1>
+
+<p class="subtitle">Monitor your health insights powered by AI</p>
+
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Heart Risk</h3>
+
+<p class="risk low">Low</p>
+
+</div>
+
+
+<div class="stat-card">
+
+<h3>Diabetes Risk</h3>
+
+<p class="risk medium">Medium</p>
+
+</div>
+
+
+<div class="stat-card">
+
+<h3>Blood Pressure</h3>
+
+<p class="risk high">High</p>
+
+</div>
+
+</div>
+
+
+
+<div class="prediction-section">
+
+<h2>AI Health Prediction</h2>
+
+<form id="predictionForm">
+
+<input type="number" placeholder="Age" id="age">
+
+<input type="number" placeholder="Blood Pressure" id="bp">
+
+<input type="number" placeholder="Glucose Level" id="glucose">
+
+<button type="submit">Predict Health Risk</button>
+
+</form>
+
+<h3 id="result"></h3>
+
+</div>
+
+
+
+<div class="chart-section">
+
+<h2>Your Health Trends</h2>
+
+<canvas id="healthChart"></canvas>
+
+</div>
+
+
+
+<div class="tips">
+
+<h2>AI Health Tips</h2>
+
+<ul>
+
+<li>Drink at least 2–3 liters of water daily</li>
+
+<li>Exercise for 30 minutes every day</li>
+
+<li>Maintain a balanced diet</li>
+
+<li>Sleep for at least 7–8 hours</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+
+const ctx=document.getElementById('healthChart');
+
+new Chart(ctx,{
+type:'line',
+data:{
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{
+label:'Health Score',
+data:[60,65,70,68,75,80],
+borderColor:'#e5002b',
+backgroundColor:'rgba(229,0,43,0.1)',
+tension:0.4
+}]
+}
+});
+
+</script>
+
+</body>
+
+</html>
